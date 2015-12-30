@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0:, user-scalable=no">
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="mobile-web-app-capable" content="yes">
+<title>Asian carp</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"/>
+<link rel="stylesheet" href="styles/claro.css"/>
+<link rel="stylesheet" href="https://js.arcgis.com/3.15compact/esri/css/esri.css"/>
+<!--new styles-->
+<link rel="stylesheet" href="styles/carp_mobile_vgi.css"/>
+</head>
+
+<body>
+
+<div data-role="page" id="ui-map-page" data-theme="a">
+  
+  <div id="ui-map-content" data-theme="a">
+    <div id="ui-map"></div>
+      <div id="ui-dijit-geocoder"></div>
+      <div id="ui-dijit-locatebutton"></div>      
+      <div id="search"></div>
+      <!--here is the setting panel button-->
+      <a id="ui-settings-button" href="#ui-settings-panel" class="SettingsButton ui-btn"></a>
+      <!--here is the editor button-->
+      <a id="ui-feature-templates-button" href="#ui-features-panel" data-rel="popup"
+        class="ui-btn" data-transition="pop"></a>    
+  </div>
+
+    
+    <div data-role="popup" id="ui-features-panel" data-theme="a">
+      <ul id="ui-feature-list" data-role="listview" data-inset="true"></ul>
+    </div>
+
+    
+    <div data-role="popup" id="ui-collection-prompt" data-theme="a" class="ui-content"
+      data-position-to="#ui-feature-templates-button">
+      <p>Click the map to report an incident.</p>
+    </div>
+    
+    <div data-role="panel" id="ui-settings-panel" data-theme="a" data-position="right" data-display="push"
+      data-position-fixed="true">
+      <ul data-role="listview">
+        <li data-role="list-divider">Map Options</li>
+        <li class="basemapOption "><a class="ui-btn ui-btn-icon-custom" data-basemapname="topo">Topographic</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="streets">Streets</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="hybrid">Satellite</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="gray">Gray</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="terrain">Terrain</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="oceans">Oceans</a></li>
+        <li class="basemapOption"><a class="ui-btn ui-btn-icon-custom" data-basemapname="national-geographic">National
+          Geographic</a></li>
+        <li data-role="list-divider">Other</li>
+        <li data-icon="false"><a href="carp.html" target="_blank" data-role="button">Asian Carp Id</a></li>
+        <li data-icon="false"><a href="#ui-about-page" class="ui-btn" data-role="button">About</a></li>
+        <li data-icon="false"><a href="#ui-feedback-page" class="ui-btn" data-role="button">Feedback</a></li>
+		<li data-icon="false"><a href="Home.html" target="_blank" class="ui-btn" data-role="button">Let's Play</a></li>
+        <li data-icon="false"><a href="#" id="ui-home-button" class="ui-btn">Reset map</a></li>
+      </ul>
+    </div>
+</div>
+
+
+<!--heres the attribute page-->
+<div data-role="page" id="ui-attributes-page" data-theme="a">
+  
+  <div data-role="header" data-nobackbtn="true">
+    <h1>Collect</h1>
+  </div>
+  <div class="ui-content" data-inset="true">
+    <div>
+      <div id="currentAddress"></div>
+    </div>
+  <div id="ui-attributes-container"></div>
+    <a href="#ui-map-page" data-role="button">Finish</a>
+  </div>
+</div>
+
+<div data-role="page" id="carp-species-list" data-theme="a">
+
+  <div id="species-header">
+  Asian Carp Id
+  </div>
+
+  <div class="ui-content" data-theme="a">
+      <b>Common Name:</b>
+    <div class="ui-body">
+    </div>
+    <a href="https://gis14.uwec.edu/f15Geog455/leiferdj/lets_play/bighead.html" data-role="button">Bighead Carp</a>
+    <a href="#ui-map-page" data-role="button">Silver Carp</a>
+    <a href="#ui-map-page" data-role="button" class="ui-btn">Grass Carp</a>
+    <a href="#ui-map-page" data-role="button" class="ui-btn">Close</a>
+  </div>
+</div>
+
+<div data-role="page" id="ui-about-page" data-theme="a">
+  
+  <div class="ui-content" data-theme="a">
+    <h2>About this application</h2>
+    <div class="ui-body">
+      Asian carp are an invasive species that have to potential to outcompete native fish for resources. They were originally introduced to the United States in the 1970's as a cleaning mechanism in aquaculture but escaped and spread into the Mississippi River. Silver carp specifically pose a danger to boaters because they jump out of the water when startled by passing motors.
+    </div>
+    <a href="#ui-map-page" data-role="button" class="ui-btn">Close</a>
+  </div>
+</div>
+
+
+<div data-role="page" id="ui-feedback-page" data-theme="a">
+  
+  <div class="ui-content" data-theme="a">
+    <h2>Send Feedback about this application</h2>
+    <div class="ui-body">
+      
+      <div class="ui-field-contain">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="" required />
+      </div>
+      <div class="ui-field-contain">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="" required />
+      </div>
+      <div class="ui-field-contain">
+        <label for="comments">Comments:</label>
+        <textarea cols="40" rows="8" name="comments" id="comments"></textarea>
+      </div>
+      <div class="ui-field-contain">
+        <label for="contacted">Can we contact you?</label>
+        <select name="contacted" id="contacted" data-role="slider">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Submit" name="submit">
+</form>
+
+      <a href="#ui-map-page" data-role="button" class="ui-btn">Close</a>
+      
+      
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+<script src="https://js.arcgis.com/3.15compact/"></script>
+<script src="js/carp_mobile_vgi.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--The viewport meta tag is used to imporve the presentation and behavior on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!-- Sets whether a web application runs in full-screen mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- // Chrome for Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Bighead Carp</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/swiper.min.css">
+
+
+    <!-- Swiper JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+
+    <!-- styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#4dd2ff));
+        background: -webkit-linear-gradient(#ffffff, #4dd2ff);
+        background: -moz-linear-gradient(#ffffff, #4dd2ff);
+        background: -o-linear-gradient(#ffffff, #4dd2ff);
+        background: -ms-linear-gradient(#ffffff, #4dd2ff);
+        background: linear-gradient(#ffffff, #4dd2ff);
+        overflow: hidden;
+    }
+
+    .header{
+        background: -webkit-gradient(linear, center top, center bottom, from(#737373), to(#000000));
+        background: -webkit-linear-gradient(#737373, #000000);
+        background: -moz-linear-gradient(#737373, #000000);
+        background: -o-linear-gradient(#737373, #000000);
+        background: -ms-linear-gradient(#737373, #000000);
+        background: linear-gradient(#737373, #000000);
+        border-style: solid;
+        border-color: #000;
+        padding: 0em;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+    }
+    .footer{
+        background: #ffffff;
+        margin: 10px;
+        margin-top: 50px;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a href="carp.html"><img src="carp_images/back.png" style="position:absolute; height:30px; left:10px; top:10px;"></a>
+
+    <div class="wrapper">
+        <p>Bighead Carp</p>
+    </div>
+
+    <a href="mobile_vgi.html"><img src="images/logo.png" style="position:absolute; height:30px; right:10px; top:10px;"></a>
+</div>
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container-h">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        &nbsp;
+                            <h4><b>Side View</b></h4>
+                            <img src="carp_images/bighead.main.jpg" position:"fixed" height="auto" width="auto">
+
+                            <div class="footer">
+                            <h3><b>Identification Tips</b></h3>
+                            <h4><b>Species:</b> <em>H. nobilis</em></h4>
+                            <h4><b>Size:</b> 1.3-2.3 ft</h4>
+                            <h4><b>Color:</b> Gray on black, white belly</h4>
+                            <h4>(Swipe down for more help)</h4>
+                            </div>
+                        
+                        </div>
+                        <div class="swiper-slide">
+                        &nbsp;
+                            <h4><b>Top View</b></h4>
+                            <img src="carp_images/bighead.2.jpg" height="auto" width="auto">
+                            <div class="footer">
+                            <h3><b>Identification Tips</b></h3>
+                            <h4>Single dorsal fin, 8 soft rays</h4>
+                            <h4>(Swipe down for more help)</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                        &nbsp;
+                            <h4>Anus Keel</h4>
+                            <div class="swiper-slide">
+                            <img src="carp_images/bighead.3.jpg" height="auto" width="auto">
+
+                            <div class="footer">
+                            <h3><b>Identification Tips</b></h3>
+                            <h4>Ventral keel from anal fin to pelvic fin</h4>
+                            <h4><b>Body Shape:</b> Fusiform</h4>
+                            <h4>(Swipe down for more help)</h4>
+                            </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                        &nbsp;
+                            <h4>Inside the Gills</h4>
+                            <div class="swiper-slide">
+                            <img src="carp_images/bighead.4.jpg" height="auto" width="auto">
+
+                            <div class="footer">
+                            <h3><b>Identification Tips</b></h3>
+                            <h4>50 or more long gill rakers</h4>
+                            <h4>(Swipe up to return to start)</h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-v"></div>
+                </div>
+            </div>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiperV = new Swiper('.swiper-container-v', {
+        pagination: '.swiper-pagination-v',
+        paginationClickable: true,
+        direction: 'vertical',
+        spaceBetween: 50
+    });
+    </script>
+</body>
+</html>
